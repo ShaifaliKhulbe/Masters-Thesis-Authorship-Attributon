@@ -1,54 +1,52 @@
-# Masters-Thesis-Authorship-Attributon
+# Masters Thesis: Authorship Attribution
+
+**Thesis Topic:** Impact of Various Parts of Speech Taggers in Authorship Attribution in Multiple Languages (English, French, Hindi)
+
+## Data Sources
+
+- **Hindi Data**: Scraped from hindisamay website.
+- **English and French Data**: Downloaded from Project Gutenberg.
+
+*Note: Final CSVs used in the models will be uploaded after thesis defense.*
+
+## Machine Learning Models
+
+The project employs SVM machine learning technique on various models as well as natural language processing (NLP) techniques to accomplish authorship attribution. These models include but are not limited to:
+
+- **Baseline Models**: Utilizing fundamental linguistic features, such as the top 100 most frequent function words and punctuation features.
+- **POS Tagging**: Incorporating POS features from different taggers for enhanced analysis.
 
 
-Masters Thesis topic: Impact of various Parts of Speech taggers in Authorship  Attribution in multiple languages (English, French, Hindi)
+## Description of Files
 
-Hindi data scraped from hindisamay website. 
-English and French data downloaded from Project Gutenberg.
+### Hindi Web Scraper
+- `Hindi_website_Data_scraper.ipynb`: Creates a corpus containing Hindi novels from various authors.
 
-*Final CSVs used in the models will be uploaded after thesis defense.
+### Preprocessing
+- `Create CSV_from_Novel_Data.ipynb`: Creates a Hindi corpus from the scraped data.
+- `balanced_dataset.ipynb`: Creates a CSV containing an equal number of sentences per author.
+- `200_chunks_dataset.ipynb`: Creates a new CSV containing 200 or more tokens, depending on the end-of-line token if not the 200th one, with long chunks per author from the above CSV.
 
-**DESCRIPTION of Files:
+## French Authorship Attribution
 
-***Hindi Web Scrapper
-> Hindi_website_Data_scraper.ipynb (TO CREATE CORPUS CONTAINING HINDI NOVELS FROM VARIOUS AUTHORS)
+- `French_Baseline`: Contains baseline features, including the top 100 most frequent function words and punctuation features.
+- `French_Baseline+POS(POET_Tagger)`: Combines baseline features with POS features from the POET tagger.
+- `French_Baseline+POS(TreeTagger)`: Combines baseline features with POS features from the TreeTagger.
+- `French_Baseline+POS(Universal_tagset)`: Combines baseline features with POS features from NLTK's tagger based on the Universal tagset.
 
-***Preprocessing
-> Create CSV_from_Novel_Data.ipynb (TO CREATE HINDI CORPUS FROM SCRAPED DATA)
-> balanced_dataset.ipynb (TO CREATE A CSV CONTAINING EQUAL NUMBER OF SENTENCES PER AUTHOR)
-> 200_chunks_dataset.ipynb (TO CREATE A NEW CSV CONTAINING 200 OR A BIT MORE TOKENS, depending of which the next of end-of-line token if not 200th one, LONG CHUNKS PER AUTHOR FROM THE ABOVE CSV)
+## English Authorship Attribution
 
-**French Authorship Attribution
+- `English_Baseline`: Contains baseline features, including the top 100 most frequent function words and punctuation features.
+- `English_Baseline+POS(TreeTagger)`: Combines baseline features with POS features from TreeTagger.
+- `English_Baseline+POS(NLTK_PennTreebank)`: Combines baseline features with POS features from NLTK's tagger based on the PennTreebank tagset.
+- `English_Baseline+POS(Universal_tagset)`: Combines baseline features with POS features from NLTK's tagger based on the Universal tagset.
 
-> French_Baseline 
-> French_Baseline+POS(POET_Tagger)
-> French_Baseline+POS(TreeTagger)
-> French_Baseline+POS(Universal_tagset)
+## Hindi Authorship Attribution
 
-As the names suggest, the first file contains only two baseline features: top 100 most frequent function words, and punctuation features. 
-The next three files contain the two baseline features + POS features created by different taggers, namely, NLTK's tagger based on Universal tagset, TreeTagger for French, and POET tagger. 
+- `Hindi_Baseline`: Contains baseline features, including the top 100 most frequent function words and punctuation features.
+- `Hindi_Baseline+POS(Universal_tagset)`: Combines baseline features with POS features from NLTK's tagger based on the Universal tagset.
+- `Hindi_Baseline+POS(StanfordNLP)`: Combines baseline features with POS features from StandfordNLP's tagger for Hindi based on Hindi Dependency Treebank (HDTB).
 
-**English Authorship Attribution
+## Conclusion
 
-> English_Baseline 
-> English_Baseline+POS(TreeTagger)
-> English_Baseline+POS(NLTK_PennTreebank)
-> English_Baseline+POS(Universal_tagset)
-
-The first file contains only two baseline features: top 100 most frequent function words, and punctuation features. 
-
-The next three files contain the two baseline features + POS features created by different taggers, namely, NLTK's tagger based on Universal tagset, TreeTagger for English, and NLTK's tagger based on PennTreebank tagset.
-
-**Hindi Authorship Attribution
-
-> Hindi_Baseline 
-> Hindi_Baseline+POS(Universal_tagset)
-> Hindi_Baseline+POS(StandfordNLP)
-
-The first file contains only two baseline features: top 100 most frequent function words, and punctuation features. 
-
-The next three files contain the two baseline features + POS features created by different taggers, namely, NLTK's tagger based on Universal tagset, and StandfordNLP's tagger for Hindi based on Hindi Dependency Treebank (HDTB).
-
-
-
-
+This project represents a significant effort in exploring authorship attribution and the role of POS taggers in multiple languages. The use of diverse linguistic features and machine learning models offers valuable insights into this field of study.
