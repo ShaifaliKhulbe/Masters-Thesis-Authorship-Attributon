@@ -7,7 +7,6 @@
 - **Hindi Data**: Scraped from hindisamay website.
 - **English and French Data**: Downloaded from Project Gutenberg.
 
-*Note: Final CSVs used in the models will be uploaded after thesis defense.*
 
 ## Machine Learning Models
 
